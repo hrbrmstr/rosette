@@ -14,7 +14,7 @@ rosette_api_key <- function(force = FALSE) {
   if (!identical(env, "") && !force) return(env)
 
   if (!interactive()) {
-    stop("Please set env var ROSETTE_API_KEY to your Dark Sky API key",
+    stop("Please set env var ROSETTE_API_KEY to your Rosette API key",
       call. = FALSE)
   }
 

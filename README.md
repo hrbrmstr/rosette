@@ -7,7 +7,7 @@ You need to put your Rosette API key into your `~/.Renviron` file. For example:
 
 The following functions are implemented:
 
--   `rosette_api_key`: Get or set ROSETTE\_API\_KEY value
+-   `rosette_api_key`: Get or set `ROSETTE_API_KEY` value
 -   `ros_categories`: Rosette API categorizatioin service
 -   `ros_embedding`: Rosette API text embedding service
 -   `ros_entities`: Rosette API entity extraction service
@@ -55,7 +55,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Mon Oct 10 18:45:36 2016"
+    ## [1] "Tue Oct 11 17:54:08 2016"
 
 ``` r
 test_dir("tests/")

@@ -33,8 +33,7 @@ ros_morph <- function(content,
                     encode="json",
                     httr::accept_json(),
                     body=bdy,
-                    httr::add_headers(`X-Rosetteapi-Key` = rosette_api_key()),
-                    verbose())
+                    httr::add_headers(`X-Rosetteapi-Key` = rosette_api_key()))
 
   httr::stop_for_status(res)
 

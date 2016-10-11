@@ -1,17 +1,24 @@
 Package: rosette
 Type: Package
-Title: Tools to Work with the Rosette API
+Title: Tools to Work with the 'Rosette' API
 Version: 0.1.0
 Date: 2016-10-10
 Author: Bob Rudis (bob@@rud.is)
 Maintainer: Bob Rudis <bob@rud.is>
-Description: Tools to Work with the Rosette API.
+Description: 'Rosette' text analytics is a robust toolkit for processing language,
+    documents, and names. Eighty-percent of big data exists as unstructured text, found 
+    in documents, webpages, and databases. This unstructured text is also multilingual — 
+    less than 6% of the world’s population are native English speakers — only adding to 
+    the complexity. The 'Rosette' API enables extraction of entities and relationships,
+    translation and comparison of names, plus sentiment analysis.
 URL: http://gitlab.com/hrbrmstr/rosette
 BugReports: https://github.com/hrbrmstr/rosette/issues
-License: AGPL
+License: Apache License 2.0
 Encoding: UTF-8
 Suggests:
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 Depends:
     R (>= 3.2.0)
 Imports:
@@ -19,3 +26,4 @@ Imports:
     httr,
     jsonlite
 RoxygenNote: 5.0.1
+VignetteBuilder: knitr

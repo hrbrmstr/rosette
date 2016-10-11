@@ -19,7 +19,9 @@ contextual categories defined in the QAG Taxonomy The response is the contextual
 categories identified in the input.
 }
 \examples{
-txt <- c('Sony Pictures is planning to shoot a good portion of the new "Ghostbusters" in Boston as well.')
+txt <- c('Sony Pictures is planning to shoot a good portion of ',
+         'the new "Ghostbusters" in Boston as well.')
+txt <- paste0(txt, collapse="")
 ros_categories(txt)
 }
 

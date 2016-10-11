@@ -10,7 +10,7 @@ You need to put your Rosette API key into your `~/.Renviron` file. For example:
     
 The following functions are implemented:
 
-- `rosette_api_key`:	Get or set ROSETTE_API_KEY value
+- `rosette_api_key`:	Get or set `ROSETTE_API_KEY` value
 - `ros_categories`:	Rosette API categorizatioin service
 - `ros_embedding`:	Rosette API text embedding service
 - `ros_entities`:	Rosette API entity extraction service

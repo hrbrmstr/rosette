@@ -1,0 +1,55 @@
+---
+title: "Introduction to Rosette"
+author: "Bob Rudis"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to Rosette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r include=FALSE}
+library(rosette)
+```
+The Rosette API is a suite of linguistic tools and services. With it you can extract entities and relationships, translate and compare names, and analyze sentiment of documents and entities from large amounts of unstructured text.
+
+## Authentication
+
+You must have an environment variable named `ROSETTE_API_KEY` defined on your system. The easiest way to
+do this is to add it to your `~/.Renviron` file. You can obtain an API key at the [Rosette developer portal](https://developer.rosette.com/admin/applications). 
+
+## Entity Extraction
+
+The Rosette entity extraction endpoint uses case-sensitive statistical models, patterns, and exact matching to indentify entities in documents. An entity refers to an object of interest such as a person, organization, location, date, or email address. Identifying entities can help you classify the document and the kinds of data it contains.
+
+The statistical models are based on computational linguistics and human-annotated training documents. The patterns are regular expressions that identify entities such as dates, times, and geographical coordinates. The exact matcher uses lists of entities to match words exactly in one or more languages.
+
+If you know the language of your input, include the [three-letter language code](https://developer.rosette.com/features-and-functions#ent_langs) in your call to speed up the response time.
+
+The main entity types are 
+
+- `LOCATION`: A city, state, country, region, building, monument, body of water, park, or address.
+- `ORGANIZATION`: A corporation, institution, agency, or other group defined by an organizational structure.
+- `PERSON`: A human identified by name, nickname, or alias.
+
+See the [API refernece](https://developer.rosette.com/features-and-functions?shell#-entity-types) for other entities available in select langauges.
+
+You can extract entities with the `ros_entities()` function:
+
+```{r}
+ros_entities("Bill Murray will appear in new Ghostbusters film: Dr. Peter Venkman was spotted filming a cameo in Boston this… http://dlvr.it/BnsFfS", "social-media")
+```
+
+## Relationship Extraction
+
+Building on the results of entity extraction and linking, Rosette relationship extraction identifies how entities are related to each other.
+
+Rosette performs open relationship extraction by finding anything within the text that looks like a relationship between entities. This allows you to filter and process the results according to your needs.
+
+Using linguistic tools and Wikidata to bootstrap its knowledge, Rosette identifies the exact action connecting the entities and other related information. It uses machine learning methods over parse trees and entity mentions to analyze the connection, and then return the components within the relationships.
+
+You can extract relationships with the `ros_relationships()` function:
+
+```{r}
+ros_relationships("The Ghostbusters movie was filmed in Boston.")
+```

@@ -20,6 +20,9 @@ entities. Each entity includes an entityId (Wikidata QID or temporary ID), menti
 and the count (number of mentions of entity in the input).
 }
 \examples{
-ros_entities("Bill Murray will appear in new Ghostbusters film: Dr. Peter Venkman was spotted filming a cameo in Boston this… http://dlvr.it/BnsFfS")
+txt <- c("Bill Murray will appear in new Ghostbusters film: Dr. Peter Venkman was ",
+         "spotted filming a cameo in Boston this… http://dlvr.it/BnsFfS")
+txt <- paste0(txt, collapse="")
+ros_entities(txt)
 }
 

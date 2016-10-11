@@ -10,7 +10,10 @@
 #' @param language Language: ISO 639-3 code (optional)
 #' @export
 #' @examples
-#' ros_entities("Bill Murray will appear in new Ghostbusters film: Dr. Peter Venkman was spotted filming a cameo in Boston this… http://dlvr.it/BnsFfS")
+#' txt <- c("Bill Murray will appear in new Ghostbusters film: Dr. Peter Venkman was ",
+#'          "spotted filming a cameo in Boston this… http://dlvr.it/BnsFfS")
+#' txt <- paste0(txt, collapse="")
+#' ros_entities(txt)
 ros_entities <- function(content, genre=NULL, language=NULL) {
 
   bdy <- list(genre=genre, language=language)

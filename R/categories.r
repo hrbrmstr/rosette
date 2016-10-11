@@ -9,7 +9,9 @@
 #' @param language Language: ISO 639-3 code (optional)
 #' @export
 #' @examples
-#' txt <- c('Sony Pictures is planning to shoot a good portion of the new "Ghostbusters" in Boston as well.')
+#' txt <- c('Sony Pictures is planning to shoot a good portion of ',
+#'          'the new "Ghostbusters" in Boston as well.')
+#' txt <- paste0(txt, collapse="")
 #' ros_categories(txt)
 ros_categories <- function(content, genre=NULL, language=NULL) {
 
